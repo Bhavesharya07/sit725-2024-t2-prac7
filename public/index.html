@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Import Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Import materialize.css -->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!-- Let browser know website is optimized for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            background-image: url('https://images.ctfassets.net/ciqrdyatmy1u/5h5iDLhEvS7M5VM6melgQx/ef84db28a9fa8afea06cb12cec5202ce/East_Sydney_Private_Hospital.jpg?fit=fill&f=faces&fm=webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: #fd9926;
+        }
+
+        .nav-wrapper a.brand-logo {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .hero-section {
+            background-image: url('https://example.com/hospital-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-section a.btn-large {
+            background-color: #fade6c;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .container {
+            flex: 1;
+            margin-top: 30px;
+        }
+
+        footer {
+            background-color: #26c3fd;
+            color: #fff;
+        }
+
+        footer span {
+            font-size: 1.2rem;
+        }
+
+        .appointment-form {
+            background-color: #f4f4f4;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(231, 22, 92, 0.1);
+        }
+
+        .appointment-form h3 {
+            margin-bottom: 0px;
+        }
+
+        .appointment-form input,
+        .appointment-form select,
+        .appointment-form textarea {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .appointment-form button {
+            background-color: #fade6c;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"> ⚕️ Arya Hospital's⚕️</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#appointment-form">Appointment</a></li>
+                <li><a href="badges.html">Services</a></li>
+                <li><a href="collapsible.html">Contact us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Welcome to Arya Hospital 🪷</h1>
+        <p>Your health, our priority. Book your appointment with us today.</p>
+        <a href="#appointment-form" class="btn-large waves-effect waves-light">Book Appointment</a>
+    </div>
+
+    <!-- Main section -->
+    <div class="container">
+        <div class="row">
+            <!-- Appointment Form -->
+            <div class="col s12 m8 offset-m2">
+                <div class="appointment-form" id="appointment-form">
+                    <h3>Book Your Appointment</h3>
+                    <form id="appointmentForm" action="/appointments/submit_appointment" method="post">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="fullName" required>
+                    
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phoneNumber" required>
+                    
+                        <label for="reason">Department to Consult</label>
+                        <input type="text" id="reason" name="department" required>
+                    
+                        <label for="date">Appointment Date</label>
+                        <input type="date" id="date" name="appointmentDate" required>
+                    
+                        <button type="submit" class="btn waves-effect waves-light"
+                            style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 25px;">
+                            Book Appointment
+                        </button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="page-footer" style="background-color: #fd9926;">
+        <div class="container center-align">
+            <span>@2024 Arya Hospitals Limited, Happy to Serve You!</span>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript at end of body for optimized loading -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
